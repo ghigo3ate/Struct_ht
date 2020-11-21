@@ -6,25 +6,25 @@ using System.Threading.Tasks;
 
 namespace Struct
 {
-    public record Vector
+    public struct Vector
     {
-        public double x { get; set; }
-        public double y { get; set; }
-        public double z { get; set; }
+	    x = X;
+            y = Y;
+            z = Z;
 		
         public Vector(double X, double Y, double Z) 
 		{
-			(x, y, z) = (X, Y, Z);
+			return (x, y, z) = (X, Y, Z);
 		}
 
         public override string ToString() 
 		{	
-			$"({x}, {y}, {z})";
+			return $"({x}, {y}, {z})";
 		}
 
         public static Vector operator +(Vector a, Vector b)
 		{
-			new Vector(a.x + b.x, a.y + b.y, a.z + b.z);
+			 return new Vector(a.x + b.x, a.y + b.y, a.z + b.z);
 		}
 
         public static Vector operator -(Vector a, Vector b)
